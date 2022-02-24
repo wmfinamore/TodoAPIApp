@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 
     # Terceiros
     'debug_toolbar',
+    'rest_framework',
 
     # App's
     'accounts',
