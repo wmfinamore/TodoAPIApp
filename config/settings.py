@@ -35,6 +35,7 @@ INSTALLED_APPS = [
 
     # App's
     'accounts',
+    'apps.tasks',
 
 ]
 
