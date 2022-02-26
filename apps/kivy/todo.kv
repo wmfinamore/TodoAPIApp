@@ -30,9 +30,18 @@ BoxLayout:
         manager: 'screen_manager'
 
 <HomeScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        MyRecycleView:
+<MyRecycleView>:
+    viewclass: 'Label'
+    RecycleBoxLayout:
+        color: 1,1,1,1
+        default_size: None, dp(56)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+<AddScreen>
     Label:
-        text: "Home"
-
-<AddScreen>:
-    Label:
-        text: "Add to list ..."
+        text: "Add to list"
