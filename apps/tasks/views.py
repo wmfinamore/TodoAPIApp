@@ -19,4 +19,5 @@ def create_task(request):
     data = request.data
     serializer = TaskSerializer(data=data)
     if serializer.is_valid():
+        serializer.create(data)
         return Response(serializer.data, status=status.HTTP_200_OK)
