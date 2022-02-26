@@ -20,6 +20,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('apps.tasks.urls'))
 ]
 
 # Rota para ativar o debug toolbar quando do django estiver em modo debug
