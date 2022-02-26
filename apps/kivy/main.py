@@ -17,14 +17,16 @@ class MyRecycleView(RecycleView):
         super(MyRecycleView, self).__init__(**kwargs)
         self.load_data()
         Clock.schedule_interval(self.load_data, 1)
+
     def load_data(self, *args):
         store = requests.get('http://127.0.0.1:8000/').json()
 
         list_data = []
-        from item in store:
+        for item in store:
             list_data.append({'text': item['name']})
 
-        self.data= list_data
+        self.data = list_data
+
 
 class HomeScreen(Screen):
     pass
