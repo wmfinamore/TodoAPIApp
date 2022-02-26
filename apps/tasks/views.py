@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -7,6 +6,7 @@ from .serializers import TaskSerializer
 from .models import Task
 
 
+# list tasks
 @api_view(['GET'])
 def all_tasks(request):
     tasks = Task.objects.all()
@@ -14,6 +14,7 @@ def all_tasks(request):
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
+# create
 @api_view(['POST'])
 def create_task(request):
     data = request.data
