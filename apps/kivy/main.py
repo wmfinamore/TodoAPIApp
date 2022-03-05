@@ -24,7 +24,7 @@ class MyRecycleView(RecycleView):
         Clock.schedule_interval(self.load_data, 1)
 
     def load_data(self, *args):
-        store = requests.get('http://127.0.0.1:8000/').json()
+        store = requests.get('http://127.0.0.1:8000/', auth=('teste', 'Teste123456')).json()
 
         list_data = []
         for item in store:
@@ -44,7 +44,7 @@ class AddNewForm(Widget):
 
     def submit_input(self):
         self.input = self.text_input.text
-        post = requests.post('http://127.0.0.1:8000/create', json={'name': self.input})
+        post = requests.post('http://127.0.0.1:8000/create', json={'name': self.input}, auth=('teste', 'Teste123456'))
 
         self.text_input.text = ''
 
